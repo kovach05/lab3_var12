@@ -1,0 +1,14 @@
+C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\bin\Debug\net9.0\lab3_var12.exe
+C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\bin\Debug\net9.0\lab3_var12.deps.json
+C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\bin\Debug\net9.0\lab3_var12.runtimeconfig.json
+C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\bin\Debug\net9.0\lab3_var12.dll
+C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\bin\Debug\net9.0\lab3_var12.pdb
+C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\obj\Debug\net9.0\lab3_var12.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\obj\Debug\net9.0\lab3_var12.AssemblyInfoInputs.cache
+C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\obj\Debug\net9.0\lab3_var12.AssemblyInfo.cs
+C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\obj\Debug\net9.0\lab3_var12.csproj.CoreCompileInputs.cache
+C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\obj\Debug\net9.0\lab3_var12.dll
+C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\obj\Debug\net9.0\refint\lab3_var12.dll
+C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\obj\Debug\net9.0\lab3_var12.pdb
+C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\obj\Debug\net9.0\lab3_var12.genruntimeconfig.cache
+C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\obj\Debug\net9.0\ref\lab3_var12.dll
