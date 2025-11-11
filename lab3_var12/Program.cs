@@ -21,15 +21,6 @@ watch.Stop();
 var durationSerial = watch.Elapsed;
 Console.WriteLine($"Serial mode: median is {medianSerial:F6}, duration is {durationSerial}");
 
-watch.Restart();
-double medianParallel = MedianParallel(array, taskCount);
-watch.Stop();
-var durationParallel = watch.Elapsed;
-double speedUp = durationSerial.TotalMilliseconds / durationParallel.TotalMilliseconds;
-
-Console.WriteLine($"Parallel mode: median is {medianParallel:F6}, speed-up is {speedUp:F9}");
-
-
 static double MedianSerial(double[] source)
 {
     var data = (double[])source.Clone();
@@ -37,6 +28,13 @@ static double MedianSerial(double[] source)
     int n = data.Length;
     return (n % 2 == 1) ? data[n / 2] : (data[n / 2 - 1] + data[n / 2]) / 2.0;
 }
+
+watch.Restart();
+double medianParallel = MedianParallel(array, taskCount);
+watch.Stop();
+var durationParallel = watch.Elapsed;
+double speedUp = durationSerial.TotalMilliseconds / durationParallel.TotalMilliseconds;
+Console.WriteLine($"Parallel mode: median is {medianParallel:F6}, speed-up is {speedUp:F9}");
 
 static double MedianParallel(double[] source, int taskCount)
 {
