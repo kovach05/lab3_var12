@@ -1,12 +1,10 @@
 ﻿/*
- * Написати програму для паралельного пошуку медіани варіаційного ряду
- * довжини n.
- */
-
+Написати програму для паралельного пошуку медіани варіаційного ряду довжини n.
+*/
 
 using System.Diagnostics;
 
-const int n = 5_000_000;
+const int n = 20_000;
 const int taskCount = 8;
 
 var random = new Random();
@@ -18,32 +16,29 @@ for (int i = 0; i < n; i++)
 
 var watch = new Stopwatch();
 watch.Start();
-double medianSerial = FindMedianSerial(array);
+double medianSerial = MedianSerial(array);
 watch.Stop();
 var durationSerial = watch.Elapsed;
-
-Console.WriteLine($"Serial median = {medianSerial:F3}, duration = {durationSerial}");
+Console.WriteLine($"Serial mode: median is {medianSerial:F6}, duration is {durationSerial}");
 
 watch.Restart();
-double medianParallel = FindMedianParallel(array, taskCount);
+double medianParallel = MedianParallel(array, taskCount);
 watch.Stop();
 var durationParallel = watch.Elapsed;
+double speedUp = durationSerial.TotalMilliseconds / durationParallel.TotalMilliseconds;
 
-double speedup = durationSerial.TotalMilliseconds / durationParallel.TotalMilliseconds;
-Console.WriteLine($"Parallel median = {medianParallel:F3}, duration = {durationParallel}, speed-up = {speedup:F2}");
+Console.WriteLine($"Parallel mode: median is {medianParallel:F6}, speed-up is {speedUp:F9}");
 
-static double FindMedianSerial(double[] source)
+
+static double MedianSerial(double[] source)
 {
     var data = (double[])source.Clone();
     Array.Sort(data);
     int n = data.Length;
-    if (n % 2 == 1)
-        return data[n / 2];
-    else
-        return (data[n / 2 - 1] + data[n / 2]) / 2.0;
+    return (n % 2 == 1) ? data[n / 2] : (data[n / 2 - 1] + data[n / 2]) / 2.0;
 }
 
-static double FindMedianParallel(double[] source, int taskCount)
+static double MedianParallel(double[] source, int taskCount)
 {
     int n = source.Length;
     var data = (double[])source.Clone();
@@ -53,6 +48,7 @@ static double FindMedianParallel(double[] source, int taskCount)
     int[] start = new int[taskCount];
     int[] length = new int[taskCount];
     int index = 0;
+
     for (int i = 0; i < taskCount; i++)
     {
         start[i] = index;
@@ -70,6 +66,7 @@ static double FindMedianParallel(double[] source, int taskCount)
             Array.Sort(data, from, len);
         });
     }
+
     Task.WaitAll(tasks);
     
     int[] pos = new int[taskCount];
@@ -108,8 +105,5 @@ static double FindMedianParallel(double[] source, int taskCount)
         }
     }
 
-    if (mid1 == mid2)
-        return val1;
-    else
-        return (val1 + val2) / 2.0;
+    return (mid1 == mid2) ? val1 : (val1 + val2) / 2.0;
 }

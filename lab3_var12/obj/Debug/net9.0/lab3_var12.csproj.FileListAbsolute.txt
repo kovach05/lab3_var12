@@ -12,3 +12,4 @@ C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\obj\Debug\net9.0\refint\lab3_
 C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\obj\Debug\net9.0\lab3_var12.pdb
 C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\obj\Debug\net9.0\lab3_var12.genruntimeconfig.cache
 C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\obj\Debug\net9.0\ref\lab3_var12.dll
+C:\Users\maksk\RiderProjects\lab3_var12\lab3_var12\obj\Debug\net9.0\lab3_var12.sourcelink.json
